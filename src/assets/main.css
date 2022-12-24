@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  @apply bg-white flex justify-center items-center min-h-screen;
+}
+
+body #app{
+  @apply flex flex-col justify-between space-y-6;
+}
