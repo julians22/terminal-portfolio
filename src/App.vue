@@ -1,6 +1,5 @@
 <script setup>
 import { useGtag } from "vue-gtag-next";
-import { useWindowSize } from 'vue-window-size';
 
 
 import { onBeforeMount, onMounted, ref } from 'vue'
@@ -14,7 +13,7 @@ const wbContactRef = ref()
 const isContact = ref(false);
 const isAbout = ref(false);
 
-const { width } = useWindowSize();
+const width = window.innerWidth;
 
 const terminalOpt = ref(null);
 
@@ -79,11 +78,11 @@ onBeforeMount(() => {
 
 const initTerminalWidth = () => {
   return {
-    width: width <= 425 ? 400 : 300,
-    top: width <= 425 ? 50 : 10,
-    right: width <= 425 ? 50 : 10,
-    left: width <= 425 ? 50 : 10,
-    bottom: width <= 425 ? 50 : 10
+    width: width <= 425 ? 300 : 400,
+    top: width <= 425 ? 10 : 50,
+    right: width <= 425 ? 10 : 50,
+    left: width <= 425 ? 10 : 50,
+    bottom: width <= 425 ? 10 : 50
   }
 }
 
